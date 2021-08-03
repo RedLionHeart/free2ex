@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>-->
+    <link rel="stylesheet" href="./css/style.min.css"/>
+    <!--<link rel="shortcut icon" href="./images/favicon.png" type="image/png">-->
+    <title>Free2ex</title>
+
+</head>
+
+<body>
+<header class="header">
+    <div class="header-top">
+        <div class="box box--default">
+            <div class="header-top__container">
+                <a href="https://my.free2ex.com/ru/Login" target="_blank" rel="noopener noreferrer" class="header-top__enter-btn btn--white">Вход</a>
+                <a href="https://my.free2ex.com/ru/Registration" target="_blank" rel="noopener noreferrer" class="header-top__register-btn btn--light btn--header">Регистрация</a>
+                <div class="header-top__lang-switcher">
+                    <div class="header-top__cur-lang">RU</div>
+                    <div class="header-top__lang-arrow">
+                        <img src="./images/main/arrow-header.svg" alt="arrow" width="24" height="24">
+                    </div>
+                    <div class="lang-switcher-container">
+                        <div class="lang-switcher__current-item">
+                            <span>RU</span>
+                            <img src="./images/main/check-lang.svg" alt="Lang" width="24" height="24">
+                        </div>
+                        <a href="#" class="lang-switcher__another-item">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="box box--default">
+            <div class="header-bottom__container">
+                <div class="header-bottom__logo">
+                    <img src="./images/base/logo.svg" alt="Free2ex" class="header-bottom__logo-img">
+                </div>
+                <nav class="header-bottom__menu">
+                    <div class="mobile-lang-switcher">
+                        <span>RU</span>
+                        <a href="#">EN</a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="https://www.free2ex.com/ru" target="_blank" rel="noopener noreferrer">Рынки</a>
+                            <div class="header-bottom__submenu">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/shares" target="_blank" rel="noopener noreferrer" class="text">Токенизированные акции</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/forex" target="_blank" rel="noopener noreferrer" class="text">Токенизированные форекс пары</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/markets" target="_blank" rel="noopener noreferrer" class="text">Криптовалюты</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/indicies" target="_blank" rel="noopener noreferrer" class="text">Токенизированные индексы</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/commodities" target="_blank" rel="noopener noreferrer" class="text">Токенизированные сырьевые товары</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="current" href="./calculator.html">Торговый калькулятор</a>
+                        </li>
+                        <li>
+                            <a href="./calendar.html">Экономический календарь</a>
+                        </li>
+                        <li>
+                            <a href="https://www.free2ex.com/ru#about" target="_blank" rel="noopener noreferrer">О нас</a>
+                            <div class="header-bottom__submenu">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/about-us" target="_blank" rel="noopener noreferrer" class="text">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/platform" target="_blank" rel="noopener noreferrer" class="text">Торговая платформа</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/blog" target="_blank" rel="noopener noreferrer" class="text">Блог</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.free2ex.com/ru#education" target="_blank" rel="noopener noreferrer">Обучение</a>
+                            <div class="header-bottom__submenu">
+                                <ul>
+                                    <li>
+                                        <a href="https://free2ex.zendesk.com/hc/ru" target="_blank" rel="noopener noreferrer" class="text">База знаний</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/ru/guide" target="_blank" rel="noopener noreferrer" class="text">Руководство по торговле</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/webinar" target="_blank" rel="noopener noreferrer" class="text">Обучающий вебинар</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__close-button">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="main">
+    <section class="calculator">
+        <div class="box box--default">
+            <div class="mobile-menu">
+                <div class="mobile-menu__logo">
+                    <img src="./images/base/logo-aqua.svg" alt="Free2ex">
+                </div>
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h1 class="calculator__title h2">Калькулятор трейдера</h1>
+            <div class="calculator__subtext">
+                <p>Форекс и CFD торговый калькулятор помогает принять решение до открытия сделки:</p>
+                <ol>
+                    <li>1.оценить прибыль или убыток вашей торговли</li>
+                    <li>2.сравнить свои результаты по различным ценам открытия и закрытия</li>
+                    <li>3.рассчитать необходимый залог для ваших позиций</li>
+                    <li>4.получить информацию о стоимости пункта.</li>
+                </ol>
+            </div>
+            <div class="calculator__container">
+                <div class="calculator__parameters calculator__item">
+                    <h3 class="calculator__item-title h3">Основные параметры</h3>
+
+                    <div class="calculator__parameters-select-container-mobile calculator__parameters-select-container--grid">
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Инструмент:</p>
+                            <select class="calculator__parameters-select" id="instruments">
+                                <option value="eur">EUR/USD</option>
+                            </select>
+                        </div>
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Лот:</p>
+                            <label>
+                                <input type="text" class="calculator__parameters-input" value="1" readonly id="lot">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculator__parameters-select-container calculator__parameters-select-container--grid">
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Кредитное плечо:</p>
+                            <select class="calculator__parameters-select" id="leverage">
+                                <option value="500">1:500</option>
+                                <option value="100">1:100</option>
+                                <option value="66.67">1:66,67</option>
+                                <option value="5">1:5</option>
+                                <option value="3">1:3</option>
+                            </select>
+                        </div>
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Валюта счёта:</p>
+                            <select class="calculator__parameters-select" id="account-currency">
+                                <option value="USD">XUSD</option>
+                                <option value="EUR">XEUR</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calculator__parameters-select-container calculator__parameters-select-container--grid">
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Цена открытия:</p>
+                            <label>
+                                <input type="text" class="calculator__parameters-input" value="1,52525" name="open_price" id="open_price">
+                            </label>
+                        </div>
+                        <div class="calculator__parameters-select-container-item">
+                            <p class="calculator__parameters-subtitle">Цена закрытия:</p>
+                            <label>
+                                <input type="text" class="calculator__parameters-input" value="1,52525" name="close_price" id="close_price">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculator__parameters-choice-container" id="choice-parameter">
+                        <input type="radio" name="choice-buy" id="radio-buy" value="buy" checked>
+                        <label for="radio-buy">
+                            Купить
+                        </label>
+                        <input type="radio" name="choice-buy" id="radio-sell" value="sell">
+                        <label for="radio-sell">
+                            Продать
+                        </label>
+                    </div>
+                    <div class="calculator__parameters-btn-container">
+                       <button class="btn--light btn--calculator">Рассчитать</button>
+                    </div>
+                </div>
+                <div class="calculator__result calculator__item">
+                    <h3 class="calculator__item-title h3">Результат</h3>
+                    <div class="calculator__result-table">
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Размер контракта</div>
+                            <div class="calculator__result-table-col--value" id="size_contract"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Тик</div>
+                            <div class="calculator__result-table-col--value" id="tick"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Стоимость пункта</div>
+                            <div class="calculator__result-table-col--value" id="price_punkt"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Своп (продажа)</div>
+                            <div class="calculator__result-table-col--value" id="swop_sell"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Своп (покупка)</div>
+                            <div class="calculator__result-table-col--value" id="swop_buy"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Маржа при текущей рыночной цене</div>
+                            <div class="calculator__result-table-col--value" id="margin"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Комиссия</div>
+                            <div class="calculator__result-table-col--value" id="comission"></div>
+                        </div>
+                        <div class="calculator__result-table-row">
+                            <div class="calculator__result-table-col--key">Прибыль</div>
+                            <div class="calculator__result-table-col--value" id="profit"></div>
+                        </div>
+                    </div>
+                    <div class="calculator__result-img-container">
+                        <img src="./images/calculator/1.png" alt="calculator" class="calculator__result-img">
+                    </div>
+                </div>
+                <div class="calculator__use calculator__item">
+                    <h3 class="calculator__item-title h3">Как использовать калькулятор</h3>
+                    <ol class="calculator__use-list">
+                        <li>1. выберите торговый инструмент из всплывающего меню;</li>
+                        <li>2. выберите ваше кредитное плечо из всплывающего меню;</li>
+                        <li>3. задайте вашу цену открытия (обратите внимание, что обменный курс на сегодняшний день отображается по умолчанию);</li>
+                        <li>4. задайте вашу цену закрытия (обратите внимание, что это может быть гипотетическая или историческая);</li>
+                        <li>5. выберите купить или продать из всплывающего меню.</li>
+                        <li>6. Нажмите «рассчитать».</li>
+                        <li>7. Теперь вы можете просмотреть ваши ориентировочные результаты. Отрицательное значение указывает на убытки и наоборот.</li>
+                        <li>8. Чтобы сделать новый расчет, просто измените один из торговых параметров, указанных в пунктах 1 и 2.</li>
+                    </ol>
+                </div>
+                <div class="calculator__calculations calculator__item">
+                    <h3 class="calculator__item-title h3">Расчеты</h3>
+                    <p class="calculator__calculations-text-item">С торговым калькулятором можно вычислить различные варианты. например:</p>
+                    <p class="calculator__calculations-text-item calculator__calculations-text-item--bold">Размер контракта = кол-во лотов * размер контракта или лота</p>
+                    <p class="calculator__calculations-text-item">2 лотa EUR/USD: 2 * 100,000 EUR = 200,000 EUR</p>
+                    <p class="calculator__calculations-text-item calculator__calculations-text-item--bold">Стоимость пункта (Форекс) = (1 пункт / курс обмена котируемой валюты к доллару США) * лот * объем сделки за лот</p>
+                    <p class="calculator__calculations-text-item">2 лота EUR/USD: (0,0001 / 1) * 2 * 100000 EUR = 20 USD</p>
+                    <h3 class="calculator__item-title--second h3 calculator__comment-title" style="visibility: hidden; max-height: 0;">Комментарии</h3>
+                    <p class="calculator__calculations-text-item" style="visibility: hidden; max-height: 0;" id="comment-data"></p>
+                </div>
+                <div class="calculator__calendar calculator__item calculator__item--width2">
+                    <h3 class="calculator__item-title h3">Календарь Форекс</h3>
+                    <iframe src="https://sslecal2.forexprostools.com?ecoDayBackground=%23489987&ecoDayFontColor=%23ffffff&columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone,filters&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=day&timeZone=18&lang=7" width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></div>
+                    <a href="#" class="calculator__calendar-link">Посмотреть весь календарь</a>
+                </div>
+                <div class="calculator__denial calculator__item">
+                    <h3 class="calculator__item-title h3">Отказ от ответственности</h3>
+                    <p class="calculator__denial-text">Калькулятор трейдера нужно рассматривать только как информационное средство. Мы сделали все для предоставления самой точной информации, но не следует полагаться на абсолютное качество этого устройства. Кроме того, любая предоставленная информация может быть изменена в любое время.</p>
+                </div>
+                <div class="calculator__glossary calculator__item calculator__item--width2">
+                    <h3 class="calculator__item-title h3">Словарь терминов</h3>
+
+                    <div class="calculator__glossary-desktop">
+                        <p class="calculator__glossary-item"><strong>Покупка / Продажа —</strong> торгуя инструментами Forex и CFD, вы можете быть как покупателем, так и продавцом. Если вы видите, что цена актива растет, то можете пойти «в длинную», если снижается — «в короткую».</p>
+                        <p class="calculator__glossary-item"><strong>Комиссия —</strong> на нашем счёте Trade.MT4 нет комиссии на большинство инструментов, компенсация брокера заложена в спреде. Счёт Zero.MT4 отличается низкими спредами от 0 пунктов, взимается комиссия.</p>
+                        <p class="calculator__glossary-item"><strong>Размер контракта —</strong> эквивалент суммы, торгуемой на рынке Форекс или CFD, рассчитывается как размер стандартного лота умноженный на количество лотов. Стандартный размер лота в Форексе представляет 100.000 единиц базовой валюты. Для CFDs и других инструментов, проверьте детали в спецификации контракта.</p>
+                        <p class="calculator__glossary-item"><strong>Кредитное плечо —</strong> отношение номинальной стоимости позиции к размеру маржи, необходимой для открытия позиции (например, кредитное плечо 1:500 означает, что для 100,000 евро требуется столь же маржи, сколько для 200 EUR). Размер плеча можно изменить в Личном кабинете. Для CFD размер плеча зафиксирован и не может быть изменен.</p>
+                        <div class="calculator__glossary-item">
+                            <p><strong>Лот —</strong> общепринятое обозначение объема на рынке Forex (при торговле валютами объем обычно измеряют лотами, при торговле CFD — количеством контрактов).</p>
+                            <ul>
+                                <li>1.00 — это 1 стандартный лот, или 100 000 единиц базовой валюты.</li>
+                                <li>0.10 — это 1 мини-лот, или 10 000 единиц базовой валюты.</li>
+                                <li>0.01 — это 1 микролот или 1000 единиц базовой валюты.</li>
+                            </ul>
+                        </div>
+                        <p class="calculator__glossary-item"><strong>Внимание!</strong> При работе с CFD 1 лот = 1 CFD.</p>
+                        <p class="calculator__glossary-item"><strong>Инструмент —</strong> также называется «символом». Это актив, которым вы торгуете.</p>
+                        <p class="calculator__glossary-item"><strong>Маржа —</strong> капитал (маржа), необходимый, чтобы открыть и поддерживать позицию.</p>
+                        <p class="calculator__glossary-item"><strong>Прибыль —</strong> ваша прибыль или убыток (помечается знаком -) по предполагаемому сценарию торговли.</p>
+                        <p class="calculator__glossary-item"><strong>Тик —</strong> минимальное изменение котировки инструмента. Например, 0,00001 для EUR/USD и 0,1 пункта для индексного контракта DAX30.</p>
+                        <p class="calculator__glossary-item"><strong>Время —</strong> своп рассчитывается между 23:59:30—23:59:59 по серверному времени.</p>
+                    </div>
+                    <div class="calculator__glossary-mobile">
+                        <input type="checkbox" id="glos1">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos1">
+                                <p class="calculator__glossary-mobile-item-title">Покупка / Продажа</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Торгуя инструментами Forex и CFD, вы можете быть как покупателем, так и продавцом. Если вы видите, что цена актива растет, то можете пойти «в длинную», если снижается — «в короткую».
+                            </div>
+                        </div>
+                        <input type="checkbox" id="glos2">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos2">
+                                <p class="calculator__glossary-mobile-item-title">Комиссия</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                На нашем счёте Trade.MT4 нет комиссии на большинство инструментов, компенсация брокера заложена в спреде. Счёт Zero.MT4 отличается низкими спредами от 0 пунктов, взимается комиссия.
+                            </div>
+                        </div>
+                        <input type="checkbox" id="glos3">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos3">
+                                <p class="calculator__glossary-mobile-item-title">Размер контракта</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Эквивалент суммы, торгуемой на рынке Форекс или CFD, рассчитывается как размер стандартного лота умноженный на количество лотов. Стандартный размер лота в Форексе представляет 100.000 единиц базовой валюты. Для CFDs и других инструментов, проверьте детали в спецификации контракта.
+                            </div>
+                        </div>
+                        <input type="checkbox" id="glos4">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos4">
+                                <p class="calculator__glossary-mobile-item-title">Кредитное плечо</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Отношение номинальной стоимости позиции к размеру маржи, необходимой для открытия позиции (например, кредитное плечо 1:500 означает, что для 100,000 евро требуется столь же маржи, сколько для 200 EUR). Размер плеча можно изменить в Личном кабинете. Для CFD размер плеча зафиксирован и не может быть изменен.
+                            </div>
+                        </div>
+                        <input type="checkbox" id="glos5">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos5">
+                                <p class="calculator__glossary-mobile-item-title">Лот</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                <p>общепринятое обозначение объема на рынке Forex (при торговле валютами объем обычно измеряют лотами, при торговле CFD — количеством контрактов).</p>
+                                <ul>
+                                    <li>1.00 — это 1 стандартный лот, или 100 000 единиц базовой валюты.</li>
+                                    <li>0.10 — это 1 мини-лот, или 10 000 единиц базовой валюты.</li>
+                                    <li>0.01 — это 1 микролот или 1000 единиц базовой валюты.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos6">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos6">
+                                <p class="calculator__glossary-mobile-item-title">Внимание!</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                При работе с CFD 1 лот = 1 CFD.
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos7">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos7">
+                                <p class="calculator__glossary-mobile-item-title">Инструмент</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                также называется «символом». Это актив, которым вы торгуете.
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos8">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos8">
+                                <p class="calculator__glossary-mobile-item-title">Маржа</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Капитал (маржа), необходимый, чтобы открыть и поддерживать позицию.
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos9">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos9">
+                                <p class="calculator__glossary-mobile-item-title">Прибыль</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Ваша прибыль или убыток (помечается знаком -) по предполагаемому сценарию торговли.
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos10">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos10">
+                                <p class="calculator__glossary-mobile-item-title">Тик</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Минимальное изменение котировки инструмента. Например, 0,00001 для EUR/USD и 0,1 пункта для индексного контракта DAX30.
+                            </div>
+                        </div>
+
+                        <input type="checkbox" id="glos11">
+                        <div class="calculator__glossary-mobile-item">
+                            <label for="glos11">
+                                <p class="calculator__glossary-mobile-item-title">Время</p>
+                            </label>
+                            <div class="calculator__glossary-mobile-item-text">
+                                Своп рассчитывается между 23:59:30—23:59:59 по серверному времени.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__gutter"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="box box--default">
+        <div class="footer__top">
+            <div class="footer__col footer__col--logo">
+                <img src="./images/base/logo-footer.svg" alt="logo" class="footer__logo">
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">Продукты</h3>
+                <ul>
+                    <li><a href="https://www.free2ex.com/ru">Трейдинг</a></li>
+                    <li><a href="https://www.free2ex.com/ru/platform">PRO Trading</a></li>
+                    <li><a href="https://bestchange.free2ex.com/ru">Быстрый обмен</a></li>
+                    <li><a href="https://business.free2ex.com/ru">Для бизнеса</a></li>
+                    <li><a href="https://www.free2ex.com/ru/referral">Реферальная программа</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">API-интерфейс</h3>
+                <ul>
+                    <li><a href="https://live.free2ex.com/webapi?lang=ru">WebREST API</a></li>
+                    <li><a href="https://live.free2ex.com/feedapi?lang=ru">WebSocket Feed API</a></li>
+                    <li><a href="https://live.free2ex.com/tradeapi?lang=ru">WebSocket Trade API</a></li>
+                    <li><a href="https://github.com/SoftFx/TTFixClient/tree/master/doc">ИСПРАВИТЬ API</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">Торговый терминал</h3>
+                <ul>
+                    <li><a href="https://live.free2ex.com/ru/btcusd?type=exchange">Сеть</a></li>
+                    <li><a href="https://live.free2ex.com/Content/download/ticktrader/win/Free2ex-TickTraderTerminal-latest.exe">Windows</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=free2ex.ticktrader.terminal">Android</a></li>
+                    <li><a href="https://apps.apple.com/ru/app/free2ex-ticktrader/id1502562625">iOS</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">О нас</h3>
+                <ul>
+                    <li><a href="https://www.free2ex.com/ru/markets">Рынки</a></li>
+                    <li><a href="https://free2ex.zendesk.com/hc/ru">Поддержка</a></li>
+                    <li><a href="https://support.free2ex.com/hc/ru/categories/360002470219-FAQ">Вопросы и ответы</a></li>
+                    <li><a href="https://www.free2ex.com/ru/fees/">Сборы</a></li>
+                    <li><a href="https://hub.forklog.com/companies/free2ex/">Блог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--gray">
+                <ul>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%BD%D0%B0%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5%20%D0%B2%20%D1%82%D0%BE%D1%80%D0%B3%D0%B0%D1%85%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%D0%BC%D0%B8.pdf">Соглашение</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf">Политика конфиденциальности</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%20%D1%80%D0%B8%D1%81%D0%BA%D0%B0%D1%85.pdf">Уведомление о рисках</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F.pdf">Основная информация</a></li>
+                    <li><a href="https://www.free2ex.com/ru/documents-and-terms/">Документы и условия</a></li>
+                    <li><a href="https://www.free2ex.com/ru/jurisdictions">Юрисдикция, ограниченная предоставлением услуг</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <strong class="footer__bottom-title">Риск раскрытия информации</strong>
+            <ol class="footer__bottom-text">
+                <li>Деятельность, связанная с сделкам (операциям) с токенами связаны с высоким уровнем риска полной потери средств и других объектов гражданских прав (инвестиций), переданных в обмен на токены (в том числе в результате волатильности стоимости токенов; технических сбоев (ошибок); противоправных действий, включая хищение).</li>
+                <li>Помните, что токены не являются платежным средством и не защищены государством.</li>
+                <li>Правовое регулирование сделок с токенами не имеет единого подхода, и последствия таких сделок могут иметь разные правовые оценки в разных государствах.</li>
+                <li>Используемые технологии (в том числе технология блокчейн, другие распределенные информационные системы и аналогичные технологии) не исключают рисков технических сбоев и ошибок в работе.</li>
+            </ol>
+        </div>
+        <div class="footer__socials">
+            <a href="https://www.facebook.com/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/facebook.svg" alt="facebook">
+            </a>
+            <a href="https://www.instagram.com/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/inst.svg" alt="instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/38074176/admin/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/in.svg" alt="in">
+            </a>
+            <a href="https://twitter.com/Free2ex" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/twitter.svg" alt="twitter">
+            </a>
+            <a href="https://www.reddit.com/user/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/reddit.svg" alt="reddit">
+            </a>
+            <a href="https://t.me/free2excom_ru" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/telegram.svg" alt="telegram">
+            </a>
+            <a href="https://vk.com/free2excom" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/vk.svg" alt="vk">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/libs.min.js"></script>
+<script src="./js/masonry.pkgd.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
