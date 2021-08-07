@@ -8,14 +8,43 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.min.css"/>
-    <!--<link rel="shortcut icon" href="./images/favicon.png" type="image/png">-->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Free2ex</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159330893-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159330893-4');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P46SB9T');</script>
+    <!-- End Google Tag Manager -->
 
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46SB9T"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <header class="header">
     <div class="header-top">
         <div class="box box--default">
@@ -41,16 +70,16 @@
     <div class="header-bottom">
         <div class="box box--default">
             <div class="header-bottom__container">
-                <div class="header-bottom__logo">
-                    <img src="./images/base/logo.svg" alt="Free2ex" class="header-bottom__logo-img">
-                </div>
+                <a href="./index.html" class="header-bottom__logo">
+                    <img src="./images/base/logo-new.png" alt="Free2ex" class="header-bottom__logo-img" width="72">
+                </a>
                 <nav class="header-bottom__menu">
                     <div class="mobile-lang-switcher">
                         <span>RU</span>
                         <a href="#" target="_blank" rel="noopener noreferrer">EN</a>
                     </div>
                     <ul>
-                        <li>
+                        <li class="menu__item-with-subtitle">
                             <a class="current" href="https://www.free2ex.com/ru" target="_blank" rel="noopener noreferrer">Рынки</a>
                             <div class="header-bottom__submenu">
                                 <ul>
@@ -78,7 +107,7 @@
                         <li>
                             <a href="./calendar.html">Экономический календарь</a>
                         </li>
-                        <li>
+                        <li class="menu__item-with-subtitle">
                             <a href="https://www.free2ex.com/ru#about" target="_blank" rel="noopener noreferrer">О нас</a>
                             <div class="header-bottom__submenu">
                                 <ul>
@@ -94,7 +123,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <li class="menu__item-with-subtitle">
                             <a href="https://www.free2ex.com/ru#education" target="_blank" rel="noopener noreferrer">Обучение</a>
                             <div class="header-bottom__submenu">
                                 <ul>
@@ -124,9 +153,9 @@
     <section class="offer">
         <div class="box box--default">
             <div class="mobile-menu">
-                <div class="mobile-menu__logo">
-                    <img src="./images/base/logo.svg" alt="Free2ex">
-                </div>
+                <a href="./index.html" class="mobile-menu__logo">
+                    <img src="./images/base/logo-new.png" alt="Free2ex" width="72">
+                </a>
                 <div class="burger-menu">
                     <span></span>
                     <span></span>
@@ -153,7 +182,7 @@
                 <div class="trade__logos-container">
                     <div class="trade__logos">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="./images/main/logossection-mobile.png">
+                            <source media="(max-width: 768px)" srcset="./images/main/logossection-mobile2.jpg">
                             <img src="./images/main/logossection.png" alt="logos">
                         </picture>
                     </div>
@@ -198,13 +227,13 @@
             <div class="terminal__nav">
                 <h3 class="terminal__title h3">Торговля</h3>
                 <div class="terminal__menu">
-                    <a href="#mobile" class="terminal__menu-item terminal__menu-item--active h4"><span>Android / iOS</span>
+                    <a href="#mobile" data-number-slide="1" class="terminal__menu-item terminal__menu-item--active h4"><span>Android / iOS</span>
                         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="9" y="5" width="14" height="22" rx="1" stroke="white" stroke-width="2"/>
                             <rect x="12.5" y="4.5" width="7" height="3" rx="0.5" stroke="white"/>
                         </svg>
                     </a>
-                    <a href="#pc" class="terminal__menu-item h4"><span>PC</span>
+                    <a href="#pc" data-number-slide="2" class="terminal__menu-item h4"><span>PC</span>
                         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="11.5" y="21.5" width="9" height="6" stroke="white"/>
                             <rect x="4" y="5" width="24" height="16.2857" rx="1" stroke="white" stroke-width="2"/>
@@ -212,7 +241,7 @@
                             <line x1="10.5" y1="27" x2="21.5" y2="27" stroke="white" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </a>
-                    <a href="#web" class="terminal__menu-item h4"><span>Web-терминал</span>
+                    <a href="#web" data-number-slide="3" class="terminal__menu-item h4"><span>Web-терминал</span>
                         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="24" height="24">
                                 <rect x="3" y="3" width="24" height="24" fill="url(#pattern0)"/>
@@ -231,63 +260,68 @@
                 </div>
             </div>
         </div>
-        <div id="mobile" class="terminal--mobile box box--without-pr terminal__box terminal__box--active">
-            <div class="terminal__content">
-                <h2 class="terminal__title h2">Торговый терминал
-                    в вашем смартфоне</h2>
-                <p class="terminal__content-text text">Простой и удобный круглосуточной доступ к мобильной торговле из любой точки мира:</p>
-                <ul class="terminal__list">
-                    <li class="text">полная поддержка маржинальной и спот торговли; </li>
-                    <li class="text">более 30 инструментов технического анализа;</li>
-                    <li class="text">отслеживание портфолио торгового счета в режиме реального времени: активы, ордера и позиции;</li>
-                    <li class="text">усовершенствованная система оповещения;</li>
-                    <li class="text">история торгов и цен.</li>
-                </ul>
-                <div class="terminal__download-links">
-                    <a href="https://play.google.com/store/apps/details?id=free2ex.ticktrader.terminal">
-                        <img src="./images/main/google-play.svg" alt="google play">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/free2ex-ticktrader/id1502562625">
-                        <img src="./images/main/app-store.svg" alt="app store">
-                    </a>
+        <div class="terminal__items-container">
+            <div class="terminal__swiper-wrapper">
+                <div id="mobile" class="terminal--mobile box box--without-pr terminal__box terminal__box--active">
+                    <div class="terminal__content">
+                        <h2 class="terminal__title h2">Торговый терминал
+                            в вашем смартфоне</h2>
+                        <p class="terminal__content-text text">Простой и удобный круглосуточной доступ к мобильной торговле из любой точки мира:</p>
+                        <ul class="terminal__list">
+                            <li class="text">полная поддержка маржинальной и спот торговли; </li>
+                            <li class="text">более 30 инструментов технического анализа;</li>
+                            <li class="text">отслеживание портфолио торгового счета в режиме реального времени: активы, ордера и позиции;</li>
+                            <li class="text">усовершенствованная система оповещения;</li>
+                            <li class="text">история торгов и цен.</li>
+                        </ul>
+                        <div class="terminal__download-links">
+                            <a href="https://play.google.com/store/apps/details?id=free2ex.ticktrader.terminal">
+                                <img src="./images/main/google-play.svg" alt="google play">
+                            </a>
+                            <a href="https://apps.apple.com/us/app/free2ex-ticktrader/id1502562625">
+                                <img src="./images/main/app-store.svg" alt="app store">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="terminal__img-container">
+                        <img src="./images/main/mobiles.png" alt="Торговый терминал" class="terminal__img">
+                    </div>
+                </div>
+                <div id="pc" class="terminal--pc box box--without-pr terminal__box">
+                    <div class="terminal__content">
+                        <h2 class="terminal__title h2">Идеальное решение для опытных трейдеров.</h2>
+                        <p class="terminal__content-text text">Самый продвинутый терминал с точки зрения возможностей торговли:</p>
+                        <ul class="terminal__list">
+                            <li class="text">расширенная линейка ордеров, включая ордера IOC и Iceberg;</li>
+                            <li class="text">максимальная персонализация интерфейса;</li>
+                            <li class="text">весь необходимый набор инструментов для технического;</li>
+                            <li class="text">анализа прямо на графиках;</li>
+                        </ul>
+                        <p class="terminal__additional-text text">Доступно для Windows.</p>
+                        <div class="terminal__button-container">
+                            <a href="https://live.free2ex.com/Content/download/ticktrader/win/Free2ex-TickTraderTerminal-latest.exe" class="terminal__btn btn--default btn--light">Скачать терминал</a>
+                        </div>
+                    </div>
+                    <div class="terminal__img-container">
+                        <img src="./images/main/pc.png" alt="Торговый терминал" class="terminal__img">
+                    </div>
+                </div>
+                <div id="web" class="terminal--web box box--without-pr terminal__box">
+                    <div class="terminal__content">
+                        <h2 class="terminal__title h2">Торгуйте где угодно
+                            и когда угодно</h2>
+                        <p class="terminal__content-text text">Торгуйте где угодно и когда угодно, без необходимости загружать программное обеспечение. Независимо от того, используете ли вы Mac или PC, вы можете легко и быстро заходить на рынки через ваш браузер.
+                        </p>
+                        <div class="terminal__button-container">
+                            <a href="https://live.free2ex.com/" class="terminal__btn btn--default btn--light btn--default-min">Торговать</a>
+                        </div>
+                    </div>
+                    <div class="terminal__img-container">
+                        <img src="./images/main/web.png" alt="Торговый терминал" class="terminal__img">
+                    </div>
                 </div>
             </div>
-            <div class="terminal__img-container">
-                <img src="./images/main/mobiles.png" alt="Торговый терминал" class="terminal__img">
-            </div>
-        </div>
-        <div id="pc" class="terminal--pc box box--without-pr terminal__box">
-            <div class="terminal__content">
-                <h2 class="terminal__title h2">Идеальное решение для опытных трейдеров.</h2>
-                <p class="terminal__content-text text">Самый продвинутый терминал с точки зрения возможностей торговли:</p>
-                <ul class="terminal__list">
-                    <li class="text">расширенная линейка ордеров, включая ордера IOC и Iceberg;</li>
-                    <li class="text">максимальная персонализация интерфейса;</li>
-                    <li class="text">весь необходимый набор инструментов для технического;</li>
-                    <li class="text">анализа прямо на графиках;</li>
-                </ul>
-                <p class="terminal__additional-text text">Доступно для Windows.</p>
-                <div class="terminal__button-container">
-                    <a href="https://live.free2ex.com/Content/download/ticktrader/win/Free2ex-TickTraderTerminal-latest.exe" class="terminal__btn btn--default btn--light">Скачать терминал</a>
-                </div>
-            </div>
-            <div class="terminal__img-container">
-                <img src="./images/main/pc.png" alt="Торговый терминал" class="terminal__img">
-            </div>
-        </div>
-        <div id="web" class="terminal--web box box--without-pr terminal__box">
-            <div class="terminal__content">
-                <h2 class="terminal__title h2">Торгуйте где угодно
-                    и когда угодно</h2>
-                <p class="terminal__content-text text">Торгуйте где угодно и когда угодно, без необходимости загружать программное обеспечение. Независимо от того, используете ли вы Mac или PC, вы можете легко и быстро заходить на рынки через ваш браузер.
-                </p>
-                <div class="terminal__button-container">
-                    <a href="https://live.free2ex.com/" class="terminal__btn btn--default btn--light btn--default-min">Торговать</a>
-                </div>
-            </div>
-            <div class="terminal__img-container">
-                <img src="./images/main/web.png" alt="Торговый терминал" class="terminal__img">
-            </div>
+            <div class="terminal__swiper-wrapper-pagination"></div>
         </div>
     </section>
     <section class="popular">
@@ -342,14 +376,14 @@
     </section>
     <section class="why">
         <div class="box box--default">
-            <h2 class="why__title h2">Почему FREE2EX?</h2>
+            <h2 class="why__title h2">Почему FREE2EX</h2>
             <div class="why__content">
                 <div class="why__item">
                     <div class="why__item-counter">1</div>
                     <div class="why__item-content">
                         <h3 class="why__item-title h3">Надежность</h3>
-                        <p class="why__item-text text">Деятельность криптобиржи регулируется Парком высоких технологий. Высокие стандарты AML/KYC
-                            Подробнее о выгодах <a href="#">здесь.</a></p>
+                        <p class="why__item-text text">Деятельность криптобиржи регулируется Парком высоких технологий. Высокие стандарты AML/KYC.
+                            Подробнее о выгодах <a href="#">здесь</a></p>
                     </div>
                 </div>
                 <div class="why__item">
@@ -370,7 +404,7 @@
                     <div class="why__item-counter">4</div>
                     <div class="why__item-content">
                         <h3 class="why__item-title h3">Выгода</h3>
-                        <p class="why__item-text text">Торгуйте на любых рынках с депозитом всего от 100$. </p>
+                        <p class="why__item-text text">Торгуйте на любых рынках с депозитом всего от 100$</p>
                     </div>
                 </div>
             </div>
@@ -386,7 +420,7 @@
                 <div class="best__left-content">
                     <p class="best__left-title h3">Торгуйте на лучших условиях.</p>
                     <ul class="best__list">
-                        <li class="text">Кредитное плечо: от 1:5 до 1:500</li>
+                        <li class="text">Кредитное плечо: от 1:3 до 1:500</li>
                         <li class="text">Узкие спреды – от 0,1 пунктов (EURUSD)</li>
                         <li class="text">Минимальный депозит</li>
                         <li class="text">Бесплатный доступ к новостям рынка, аналитике и графикам в реальном времени</li>
@@ -547,8 +581,8 @@
             <div class="footer__col footer__col--default">
                 <h3 class="footer__col-title">Продукты</h3>
                 <ul>
-                    <li><a href="https://www.free2ex.com/ru">Трейдинг</a></li>
-                    <li><a href="https://www.free2ex.com/ru/platform">PRO Trading</a></li>
+                    <li><a href="https://www.free2ex.com/ru">Торговля с плечом</a></li>
+                    <li><a href="https://www.free2ex.com/ru/platform">Спотовая торговля</a></li>
                     <li><a href="https://bestchange.free2ex.com/ru">Быстрый обмен</a></li>
                     <li><a href="https://business.free2ex.com/ru">Для бизнеса</a></li>
                     <li><a href="https://www.free2ex.com/ru/referral">Реферальная программа</a></li>
@@ -560,13 +594,13 @@
                     <li><a href="https://live.free2ex.com/webapi?lang=ru">WebREST API</a></li>
                     <li><a href="https://live.free2ex.com/feedapi?lang=ru">WebSocket Feed API</a></li>
                     <li><a href="https://live.free2ex.com/tradeapi?lang=ru">WebSocket Trade API</a></li>
-                    <li><a href="https://github.com/SoftFx/TTFixClient/tree/master/doc">ИСПРАВИТЬ API</a></li>
+                    <li><a href="https://github.com/SoftFx/TTFixClient/tree/master/doc">FIX API</a></li>
                 </ul>
             </div>
             <div class="footer__col footer__col--default">
                 <h3 class="footer__col-title">Торговый терминал</h3>
                 <ul>
-                    <li><a href="https://live.free2ex.com/ru/btcusd?type=exchange">Сеть</a></li>
+                    <li><a href="https://live.free2ex.com/ru/btcusd?type=exchange">Web</a></li>
                     <li><a href="https://live.free2ex.com/Content/download/ticktrader/win/Free2ex-TickTraderTerminal-latest.exe">Windows</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=free2ex.ticktrader.terminal">Android</a></li>
                     <li><a href="https://apps.apple.com/ru/app/free2ex-ticktrader/id1502562625">iOS</a></li>
@@ -577,19 +611,19 @@
                 <ul>
                     <li><a href="https://www.free2ex.com/ru/markets">Рынки</a></li>
                     <li><a href="https://free2ex.zendesk.com/hc/ru">Поддержка</a></li>
-                    <li><a href="https://support.free2ex.com/hc/ru/categories/360002470219-FAQ">Вопросы и ответы</a></li>
-                    <li><a href="https://www.free2ex.com/ru/fees/">Сборы</a></li>
+                    <li><a href="https://support.free2ex.com/hc/ru/categories/360002470219-FAQ">FAQ</a></li>
+                    <li><a href="https://www.free2ex.com/ru/fees/">Комиссии</a></li>
                     <li><a href="https://hub.forklog.com/companies/free2ex/">Блог</a></li>
                 </ul>
             </div>
             <div class="footer__col footer__col--gray">
                 <ul>
-                    <li><a href="https://my.free2ex.com/Download?name=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%BD%D0%B0%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5%20%D0%B2%20%D1%82%D0%BE%D1%80%D0%B3%D0%B0%D1%85%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%D0%BC%D0%B8.pdf">Соглашение</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%BD%D0%B0%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5%20%D0%B2%20%D1%82%D0%BE%D1%80%D0%B3%D0%B0%D1%85%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%D0%BC%D0%B8.pdf">Договор</a></li>
                     <li><a href="https://my.free2ex.com/Download?name=%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf">Политика конфиденциальности</a></li>
                     <li><a href="https://my.free2ex.com/Download?name=%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%20%D1%80%D0%B8%D1%81%D0%BA%D0%B0%D1%85.pdf">Уведомление о рисках</a></li>
-                    <li><a href="https://my.free2ex.com/Download?name=%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F.pdf">Основная информация</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F.pdf">Общие сведения</a></li>
                     <li><a href="https://www.free2ex.com/ru/documents-and-terms/">Документы и условия</a></li>
-                    <li><a href="https://www.free2ex.com/ru/jurisdictions">Юрисдикция, ограниченная предоставлением услуг</a></li>
+                    <li><a href="https://www.free2ex.com/ru/jurisdictions">Юрисдикции, по которым ограничено оказание услуг</a></li>
                 </ul>
             </div>
         </div>
@@ -631,9 +665,29 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="./js/masonry.pkgd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="./js/libs.min.js"></script>
 <script src="./js/main.js"></script>
+
+<script>
+    let currentUTM = window.location.search
+    if(currentUTM.includes('?utm') || currentUTM.includes('?agent')){
+        let hrefs = document.getElementsByTagName('a')
+        for(let i = 0; i < hrefs.length; i++){
+            console.log(currentUTM)
+            hrefs[i].href += currentUTM
+        }
+    }
+</script>
+<!-- Start of free2ex Zendesk Widget script -->
+<script async id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=ac8ab16c-4fc1-4d7f-a0ac-8549930b5ab4"> </script>
+<script type="text/javascript">
+    zE('webWidget', 'setLocale', 'ru');
+</script>
+<!-- End of free2ex Zendesk Widget script -->
+
+
 </body>
 </html>

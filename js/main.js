@@ -27,7 +27,22 @@
         }
     })
 })();
-
+if(document.querySelector('.terminal__items-container')){
+    const swiper = new Swiper('.terminal__items-container', {
+        // Default parameters
+        slidesPerView: 1,
+        slideClass: 'terminal__box',
+        wrapperClass: 'terminal__swiper-wrapper',
+        pagination: {
+            el: '.terminal__swiper-wrapper-pagination',
+            type: 'bullets',
+        },
+        init: false,
+    });
+    if(document.documentElement.offsetWidth < 576){
+        swiper.init();
+    }
+}
 
 function showSliderTerminal() {
     const navContainer = document.querySelector('.terminal__menu');
@@ -36,41 +51,54 @@ function showSliderTerminal() {
         navContainer.addEventListener('click', function (evt) {
             evt.preventDefault();
 
-            if(evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)')){
-                const clickedMenuItem = evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)');
-                const activeElem = document.querySelector('.terminal__box--active');
-                const tabForActivate = document.querySelector(clickedMenuItem.getAttribute('href'));
-                const activeMenuItem = navContainer.querySelector('.terminal__menu-item--active');
+                if(evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)')){
+                    const clickedMenuItem = evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)');
+                    const activeElem = document.querySelector('.terminal__box--active');
+                    const tabForActivate = document.querySelector(clickedMenuItem.getAttribute('href'));
+                    const activeMenuItem = navContainer.querySelector('.terminal__menu-item--active');
 
-                activeMenuItem.classList.remove('terminal__menu-item--active');
-                clickedMenuItem.classList.add('terminal__menu-item--active');
-                activeElem.classList.remove('terminal__box--active');
-                tabForActivate.classList.add('terminal__box--active');
-            }
+                    activeMenuItem.classList.remove('terminal__menu-item--active');
+                    clickedMenuItem.classList.add('terminal__menu-item--active');
+                    activeElem.classList.remove('terminal__box--active');
+                    tabForActivate.classList.add('terminal__box--active');
+
+                    if(document.documentElement.offsetWidth < 576){
+                        let terminalClickedItem = clickedMenuItem.dataset.numberSlide - 1;
+                        swiper.slideTo(terminalClickedItem);
+                    }
+                }
         })
     }
 }
 
-function changeLangInHeader() {
+/*function changeLangInHeader() {
     const langContainer = document.querySelector('.header-top__lang-switcher');
 
     langContainer.addEventListener('click', function(){
         langContainer.classList.toggle('header-top__lang-switcher--active');
     })
+}*/
+
+if($('.calculator__container').length){
+
+    var $container = $('.calculator__container');
+
+    $container.imagesLoaded( function() {
+        $('.calculator__container').masonry({
+
+            itemSelector: '.calculator__item',
+            // use element for option
+            columnWidth: '.calculator__item',
+
+            gutter: '.calculator__gutter',
+
+        });
+    });
 }
 
-$('.calculator__container').masonry({
-    // set itemSelector so .grid-sizer is not used in layout
-    itemSelector: '.calculator__item',
-    // use element for option
-    columnWidth: '.calculator__item',
-    //percentPosition: true,
-    gutter: '.calculator__gutter',
-    //fitWidth: true,
-});
 
 showSliderTerminal();
-changeLangInHeader();
+
 
 
 let timer;
@@ -79,9 +107,19 @@ let timer;
 function generateRowTableWithData(item) {
     const itemBid = item.Bids[0].Price;
     const itemAsk = item.Asks[0].Price;
+    let nameSymbolForShow = item.Symbol;
+    if(nameSymbolForShow === 'XAUUSD'){
+        nameSymbolForShow = 'GOLD';
+    } else if(nameSymbolForShow === 'BRNT.x'){
+        nameSymbolForShow = 'BRENT';
+    } else if(nameSymbolForShow === 'SPX.x'){
+        nameSymbolForShow = 'S&P500';
+    } else if(nameSymbolForShow === 'DAX30.x'){
+        nameSymbolForShow = 'DAX30';
+    }
 
     return `<div class="best__table-row ${item.Symbol}">
-                            <div class="best__table-col name">${item.Symbol}</div>
+                            <div class="best__table-col name">${nameSymbolForShow}</div>
                             <div class="best__table-col bid">${item.Bids[0].Price}</div>
                             <div class="best__table-col ask">${item.Asks[0].Price}</div>
                             <div class="best__table-col spread">
@@ -93,11 +131,26 @@ function generateRowTableWithData(item) {
 /*создаем строки*/
 function generateTableQuotes(dataFromName) {
     const tableContent = document.querySelector('.best__table');
+    let newArrayCurrencies = [];
 
-    for (let key in dataFromName) {
-        tableContent.insertAdjacentHTML('beforeend', generateRowTableWithData(dataFromName[key]));
-    }
+    let orderCurrencies = {
+        'XAUUSD': 0,
+        'BRNT.x' : 1,
+        'BTCUSD' : 2,
+        'ETHUSD' : 3,
+        'EURUSD' : 4,
+        'USDJPY' : 5,
+        'SPX.x' : 6,
+        'DAX30.x' : 7,
+    };
 
+    dataFromName.forEach( function (item) {
+        newArrayCurrencies[orderCurrencies[item.Symbol]] = item;
+    });
+
+    newArrayCurrencies.forEach( function (item) {
+        tableContent.insertAdjacentHTML('beforeend', generateRowTableWithData(item));
+    });
 }
 
 function roundStringNumberWithoutTrailingZeroes (num, dp) {
@@ -159,7 +212,7 @@ function getSpread(Bids, Asks) {
 function refreshPriceAndChange(bool) {
     $.ajax({
         method: "GET",
-        url: "https://ttlivewebapi.free2ex.net:8443/api/v2/public/level2/EURUSD%20GBPUSD%20USDJPY%20BTCUSD%20ETHUSD%20BTCEUR%20XAUUSD%20XAGUSD%20BRNT%20BRNT.x%20SPX%20SPX.x%20DAX30%20DAX30.x?depth=1",
+        url: "https://ttlivewebapi.free2ex.net:8443/api/v2/public/level2/EURUSD%20USDJPY%20BTCUSD%20ETHUSD%20XAUUSD%20BRNT%20BRNT.x%20SPX%20SPX.x%20DAX30%20DAX30.x?depth=1",
         dataType: "json",
         data: {},
         success: function (data) {
@@ -244,6 +297,7 @@ if(tableOnMainPage){
 
 /*calculator*/
 const instrumentsSelect = document.querySelector('#instruments');
+const lotInput = document.getElementById("lot");
 let groupsInstruments = {};
 let fullDataFromApi = null;
 
@@ -251,7 +305,7 @@ function renderSingleInstrument(item, group) {
     if(typeof item === 'string'){
         return `<option value="${item}" disabled>${item}</option>`;
     } else {
-        return `<option value="${item.name}" data-group="${group}" data-precision="${item.precision}">${item.nameForOutput}</option>`;
+        return `<option value="${item.name}" data-group="${group}" data-margin="${item.marginFactor}" data-precision="${item.precision}">${item.nameForOutput}</option>`;
     }
 }
 
@@ -261,26 +315,39 @@ function renderInstrumentsForCalculator(instruments) {
 
     instruments.forEach((item) => {
         if (item.Symbol.substring(item.Symbol.length - 2) !== '_L') {
-            if(groupsInstruments.hasOwnProperty(item.StatusGroupId)){
+            let nameGroupFromApi = item.StatusGroupId;
+
+            if(nameGroupFromApi === 'Default'){
+                return false;
+            }
+            if(item.Symbol === 'XAUUSD' || item.Symbol === 'XAGUSD' || item.Symbol === 'BRNT.x' ||
+            item.Symbol === 'WTI.x' || item.Symbol === 'NG.x'){
+                nameGroupFromApi = 'Commodities';
+            } else if(item.Symbol === 'SPX.x' || item.Symbol === 'UK100.x' || item.Symbol === 'DAX30.x'){
+                nameGroupFromApi = 'Indicies';
+            }
+            if(groupsInstruments.hasOwnProperty(nameGroupFromApi)){
                 let newItemInGroup = {
                     name: item.Symbol,
                     nameForOutput: item.MarginCurrency + '/' + item.ProfitCurrency,
                     precision: item.Precision,
+                    marginFactor: item.MarginFactor,
                 };
-                groupsInstruments[item.StatusGroupId].push(newItemInGroup);
+                groupsInstruments[nameGroupFromApi].push(newItemInGroup);
             } else {
                 let arrayOfNamesCurrencies = [];
                 let newItemInGroup = {
                     name: item.Symbol,
                     nameForOutput: item.MarginCurrency + '/' + item.ProfitCurrency,
                     precision: item.Precision,
+                    marginFactor: item.MarginFactor,
                 };
                 arrayOfNamesCurrencies.push(newItemInGroup);
-                groupsInstruments[item.StatusGroupId] = arrayOfNamesCurrencies;
+                groupsInstruments[nameGroupFromApi] = arrayOfNamesCurrencies;
             }
         }
     });
-
+console.log(groupsInstruments);
     for (let group in groupsInstruments) {
         instrumentsSelect.insertAdjacentHTML('beforeend', renderSingleInstrument(group));
 
@@ -289,14 +356,63 @@ function renderInstrumentsForCalculator(instruments) {
         } );
     }
     updateOpenAndClosePrice(instrumentsSelect);
+    renderLeveragesForInstrument(instrumentsSelect);
+    renderValuesOfLots(instrumentsSelect);
 
     instrumentsSelect.addEventListener('change', function () {
         updateOpenAndClosePrice(this);
-    })
+        renderLeveragesForInstrument(this);
+        renderValuesOfLots(this);
+    });
+
+    lotInput.addEventListener("input", function (evt) {
+        if (lotInput.validity.rangeOverflow) {
+            lotInput.setCustomValidity("Значение лота больше возможного");
+        } else if(lotInput.validity.rangeUnderflow){
+            lotInput.setCustomValidity("Значение лота меньше возможного");
+        } else {
+            lotInput.setCustomValidity("");
+        }
+    });
+}
+
+function renderValuesOfLots(elem) {
+    fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/symbol/' + elem.value)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            const values = calculateValuesOfLots(data[0]);
+            lotInput.value = values.defaultValue;
+            lotInput.min = values.minValue;
+            lotInput.max = values.maxValue;
+            lotInput.step = values.minValue;
+        });
+}
+
+function calculateValuesOfLots(item) {
+    let minValue = item.MinTradeAmount / item.ContractSize;
+    let maxValue = item.MaxTradeAmount / item.ContractSize;
+
+    return {
+        defaultValue: 1,
+        minValue: minValue,
+        maxValue: maxValue,
+    }
+}
+
+function translateMarginFactorToLeverage(value) {
+    return (1 / value).toFixed(0);
+}
+function renderLeveragesForInstrument(elem) {
+    const leverage = document.querySelector('#leverage');
+
+    const translatedValue = translateMarginFactorToLeverage(elem.selectedOptions[0].dataset.margin);
+
+    leverage.innerHTML = `<option value="${translatedValue}">1:${translatedValue}</option>`;
 }
 
 function updateOpenAndClosePrice(elem) {
-    console.log(elem);
     fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/ticker/' + elem.value)
         .then((response) => {
             return response.json();
@@ -305,7 +421,7 @@ function updateOpenAndClosePrice(elem) {
             const openPriceElement = document.querySelector('#open_price');
             const closePriceElement = document.querySelector('#close_price');
             let openPriceValue = data[0].BestAsk;
-            let tick = 1 / Math.pow(10, + elem.selectedOptions[0].dataset.precision);
+            let tick = 1 / Math.pow(10, +elem.selectedOptions[0].dataset.precision);
 
             openPriceElement.value = openPriceValue;
             closePriceElement.value = roundStringNumberWithoutTrailingZeroes(openPriceValue + 10 * tick, 5);
@@ -329,42 +445,42 @@ function getTickInstrument(precision) {
     return 1 / Math.pow(10, precision);
 }
 
-function getPricePunkt(tick, activCurrency) {
-    return roundStringNumberWithoutTrailingZeroes(10 * tick * +activCurrency, 5);
+function getPricePunkt(tick, size, activCurrency) {
+    console.log('tick ' + tick);
+    console.log('size ' + size);
+    console.log('activCurrency ' + activCurrency);
+    return roundStringNumberWithoutTrailingZeroes((10 * tick * size )/ +activCurrency, 6);
 }
 
-function getMarginCurrent(size, leverage, currency) {
-    return roundStringNumberWithoutTrailingZeroes(size / leverage * currency, 2);
+function getMarginCurrent(size, openPrice, leverage, currency) {
+    return roundStringNumberWithoutTrailingZeroes(size * openPrice / leverage / currency, 2);
 }
 
 function getSwopData(group, pricePunkt, swop, currency) {
     if(group === 'Crypto' || 'Forex' || 'CFD 00-01'){
-        return roundStringNumberWithoutTrailingZeroes(pricePunkt / 10 * swop, 2);
+        return roundStringNumberWithoutTrailingZeroes(pricePunkt / 10 * swop, 3);
     } else {
-        return roundStringNumberWithoutTrailingZeroes(swop * currency, 2);
+        return roundStringNumberWithoutTrailingZeroes(swop * currency, 3);
     }
 }
 
 function renderSymbolForApi(accountCur, instrumentCurrencyProfit, instrumentCurrencyMargin, currency) {
     if(instrumentCurrencyProfit !== 'USD' && instrumentCurrencyProfit !== 'EUR'){
-        return accountCur + instrumentCurrencyProfit;
+        return instrumentCurrencyMargin + instrumentCurrencyProfit;
     } else {
-        if(currency.search(/\./) === -1){
-            return instrumentCurrencyMargin + accountCur;
-        }
         return currency;
     }
 }
 
 function getComission(commission, size, currency) {
-    return roundStringNumberWithoutTrailingZeroes(commission * size * currency, 2);
+    return roundStringNumberWithoutTrailingZeroes(commission * size / currency, 5);
 }
 
-function getProfit(action, openValue, closeValue, leverage, currency, commission) {
+function getProfit(action, openValue, closeValue, tick, pricePunkt) {
     if(action === 'buy'){
-        return roundStringNumberWithoutTrailingZeroes((closeValue - openValue) * leverage * currency - commission, 3);
+        return roundStringNumberWithoutTrailingZeroes((closeValue - openValue) / (10 * tick) * pricePunkt, 4);
     }
-    return roundStringNumberWithoutTrailingZeroes((openValue - closeValue) * leverage * currency - commission, 3);
+    return roundStringNumberWithoutTrailingZeroes((openValue - closeValue) / (10 * tick) * pricePunkt, 4);
 }
 
 function parseMyData(milliseconds) {
@@ -402,7 +518,14 @@ let submitBtn = document.querySelector('.btn--calculator');
 function calculateTable() {
     const table = document.querySelector('.calculator__result-table');
 
-    submitBtn.addEventListener('click', function () {
+    submitBtn.addEventListener('click', function (evt) {
+        evt.preventDefault();
+
+        if(!lotInput.validity.valid) {
+            // Если поле лот не валидно
+            return false;
+        }
+
         const selectedInstrument = instrumentsSelect.selectedOptions[0];
         const currentSymbol = selectedInstrument.value;
         const currentGroup = selectedInstrument.dataset.group;
@@ -431,32 +554,50 @@ function calculateTable() {
                 const fullData = data[0];
                 console.log(fullData);
                 let sizeContract = getSizeContract(lotCalculator, fullData.ContractSize);
+                let currentTickValue = getTickInstrument(fullData.Precision);
                 result.textContent = sizeContract  + ' ' + fullData.MarginCurrency;
-                tick.textContent = getTickInstrument(fullData.Precision);
+                tick.textContent = currentTickValue;
 
                 console.log('Валюта аккаунта: ' + accountCurrency);
                 console.log('Валюта инструмента: ' + fullData.ProfitCurrency);
                 console.log('Валюта инструмента: ' + fullData.MarginCurrency);
+                console.log(renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol));
                 fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/' + renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol))
                     .then((response) => {
                         return response.json();
                     })
-                    .then((data) => {
-                        let pricePunktValue = getPricePunkt(getTickInstrument(fullData.Precision), data[0].BestAsk.Price);
-                        pricePunkt.textContent = pricePunktValue + " " + accountCurrency;
-                        swopSell.textContent = getSwopData( currentGroup, pricePunktValue, fullData.SwapSizeShort, data[0].BestAsk.Price) + " " + accountCurrency;
-                        swopBuy.textContent = getSwopData( currentGroup, pricePunktValue, fullData.SwapSizeLong, data[0].BestAsk.Price) + " " + accountCurrency;
-                        margin.textContent = getMarginCurrent(sizeContract, leverageCalculator, data[0].BestAsk.Price) + " " + accountCurrency;
-                        comission.textContent = getComission(fullData.Commission, sizeContract, data[0].BestAsk.Price) + " " + accountCurrency;
-                        profit.textContent = getProfit(choiceParameterValue, openPriceElement.value, closePriceElement.value, leverageCalculator, data[0].BestAsk.Price, fullData.Commission) + " " + accountCurrency;
-
-                        setVisibleItem(commentTitle);
-                        setVisibleItem(commentData);
-
-                        commentData.innerHTML = `${fullData.Symbol} - ${data[0].BestAsk.Price} ${parseMyData(data[0].Timestamp)}<br>
-                        ${getSwopDate(fullData.TripleSwapDay)}`;
+                    .then((dataCurrentCurrency) => {
+                        if(accountCurrency === 'EUR'){
+                            fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/EURUSD')
+                                .then((response) => {
+                                    return response.json();
+                                })
+                                .then((eurusdCurrency) =>{
+                                    calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price * eurusdCurrency[0].BestAsk.Price);
+                                })
+                        } else {
+                            calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price);
+                        }
 
                     });
+
+                function calculateItemsInTable(price) {
+                    let valueAccountCurrency = price;
+                    let pricePunktValue = getPricePunkt(currentTickValue, sizeContract, valueAccountCurrency);
+
+                    pricePunkt.textContent = pricePunktValue + " " + accountCurrency;
+                    swopSell.textContent = getSwopData( currentGroup, pricePunktValue, fullData.SwapSizeShort, valueAccountCurrency) + " " + accountCurrency;
+                    swopBuy.textContent = getSwopData( currentGroup, pricePunktValue, fullData.SwapSizeLong, valueAccountCurrency) + " " + accountCurrency;
+                    margin.textContent = getMarginCurrent(sizeContract, openPriceElement.value, leverageCalculator, valueAccountCurrency) + " " + accountCurrency;
+                    comission.textContent = getComission(fullData.Commission, sizeContract, valueAccountCurrency) + " " + accountCurrency;
+                    profit.textContent = getProfit(choiceParameterValue, openPriceElement.value, closePriceElement.value, currentTickValue, pricePunktValue) + " " + accountCurrency;
+
+                    setVisibleItem(commentTitle);
+                    setVisibleItem(commentData);
+
+                    commentData.innerHTML = `${fullData.Symbol} - ${valueAccountCurrency} ${parseMyData(data[0].Timestamp)}<br>
+                        ${getSwopDate(fullData.TripleSwapDay)}`;
+                }
 
             });
         setTimeout(function() {
