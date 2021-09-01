@@ -36,20 +36,40 @@ if(document.querySelector('.terminal__items-container')){
         pagination: {
             el: '.terminal__swiper-wrapper-pagination',
             type: 'bullets',
+            clickable: true,
         },
         init: false,
+        autoHeight: true,
     });
     if(document.documentElement.offsetWidth < 576){
         swiper.init();
+
+        swiper.on('slideChange', function (items) {
+            let index = items.realIndex;
+
+            const activeMenuItem = document.querySelector('.terminal__menu-item--active');
+            const allMenuItems = document.querySelectorAll('.terminal__menu-item');
+
+            //setPaginationTop(items);
+
+            activeMenuItem.classList.remove('terminal__menu-item--active');
+            allMenuItems[index].classList.add('terminal__menu-item--active');
+        });
+
+        function setPaginationTop(props) {
+            const pagination = document.querySelector('.terminal__swiper-wrapper-pagination');
+            const contentItem = props.slides[props.realIndex].querySelector('.terminal__content').offsetHeight;
+
+            pagination.style.top = contentItem + 'px';
+        }
     }
-}
 
-function showSliderTerminal() {
-    const navContainer = document.querySelector('.terminal__menu');
+    function showSliderTerminal() {
+        const navContainer = document.querySelector('.terminal__menu');
 
-    if(navContainer){
-        navContainer.addEventListener('click', function (evt) {
-            evt.preventDefault();
+        if(navContainer){
+            navContainer.addEventListener('click', function (evt) {
+                evt.preventDefault();
 
                 if(evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)')){
                     const clickedMenuItem = evt.target.closest('.terminal__menu-item:not(.terminal__menu-item--active)');
@@ -63,13 +83,20 @@ function showSliderTerminal() {
                     tabForActivate.classList.add('terminal__box--active');
 
                     if(document.documentElement.offsetWidth < 576){
-                        let terminalClickedItem = clickedMenuItem.dataset.numberSlide - 1;
-                        swiper.slideTo(terminalClickedItem);
+                        //swiper.slideTo(terminalClickedItem);
+
+                        let dots = document.querySelector('.terminal__swiper-wrapper-pagination').querySelectorAll('.swiper-pagination-bullet');
+                        let terminalClickedItem = +clickedMenuItem.dataset.numberSlide - 1;
+                        dots[terminalClickedItem].click();
                     }
                 }
-        })
+            })
+        }
     }
+    showSliderTerminal();
 }
+
+
 
 /*function changeLangInHeader() {
     const langContainer = document.querySelector('.header-top__lang-switcher');
@@ -97,7 +124,7 @@ if($('.calculator__container').length){
 }
 
 
-showSliderTerminal();
+
 
 
 
@@ -199,6 +226,10 @@ function roundStringNumberWithoutTrailingZeroes (num, dp) {
         }
 
         finalNumber = beforePoint + '.' + afterPoint;
+    }
+
+    if(typeof finalNumber === 'number'){
+        return finalNumber;
     }
 
     // Remove trailing zeroes from fractional part before returning
@@ -347,7 +378,7 @@ function renderInstrumentsForCalculator(instruments) {
             }
         }
     });
-console.log(groupsInstruments);
+
     for (let group in groupsInstruments) {
         instrumentsSelect.insertAdjacentHTML('beforeend', renderSingleInstrument(group));
 
@@ -446,10 +477,7 @@ function getTickInstrument(precision) {
 }
 
 function getPricePunkt(tick, size, activCurrency) {
-    console.log('tick ' + tick);
-    console.log('size ' + size);
-    console.log('activCurrency ' + activCurrency);
-    return roundStringNumberWithoutTrailingZeroes((10 * tick * size )/ +activCurrency, 6);
+    return roundStringNumberWithoutTrailingZeroes((10 * tick * size ) / +activCurrency, 3);
 }
 
 function getMarginCurrent(size, openPrice, leverage, currency) {
@@ -473,21 +501,21 @@ function renderSymbolForApi(accountCur, instrumentCurrencyProfit, instrumentCurr
 }
 
 function getComission(commission, size, currency) {
-    return roundStringNumberWithoutTrailingZeroes(commission * size / currency, 5);
+    return roundStringNumberWithoutTrailingZeroes((commission / 100) * size / currency, 5);
 }
 
 function getProfit(action, openValue, closeValue, tick, pricePunkt) {
     if(action === 'buy'){
-        return roundStringNumberWithoutTrailingZeroes((closeValue - openValue) / (10 * tick) * pricePunkt, 4);
+        return roundStringNumberWithoutTrailingZeroes((closeValue - openValue) / (10 * tick) * pricePunkt, 3);
     }
-    return roundStringNumberWithoutTrailingZeroes((openValue - closeValue) / (10 * tick) * pricePunkt, 4);
+    return roundStringNumberWithoutTrailingZeroes((openValue - closeValue) / (10 * tick) * pricePunkt, 3);
 }
 
 function parseMyData(milliseconds) {
     let date = new Date(milliseconds);
     let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
+    let month = date.getMonth() + 1 < 10 ? '0' + date.getMonth() : date.getMonth();
+    let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
@@ -496,6 +524,7 @@ function parseMyData(milliseconds) {
 }
 
 function getSwopDate(value) {
+    let currentLang = document.querySelector('#cur-lang').value;
     let data = {
         0: '',
         1: 'Monday',
@@ -507,7 +536,7 @@ function getSwopDate(value) {
         7: 'Sunday',
     };
 
-    return '3-дневные свопы: ' + data[value];
+    return currentLang === 'ru' ? '3-дневные свопы: ' + data[value] : '3-day swaps: ' + data[value];
 }
 function setVisibleItem(item) {
     item.style.visibility = 'visible';
@@ -552,36 +581,48 @@ function calculateTable() {
             })
             .then((data) => {
                 const fullData = data[0];
-                console.log(fullData);
+
                 let sizeContract = getSizeContract(lotCalculator, fullData.ContractSize);
                 let currentTickValue = getTickInstrument(fullData.Precision);
                 result.textContent = sizeContract  + ' ' + fullData.MarginCurrency;
                 tick.textContent = currentTickValue;
 
-                console.log('Валюта аккаунта: ' + accountCurrency);
-                console.log('Валюта инструмента: ' + fullData.ProfitCurrency);
-                console.log('Валюта инструмента: ' + fullData.MarginCurrency);
-                console.log(renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol));
-                fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/' + renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol))
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((dataCurrentCurrency) => {
-                        if(accountCurrency === 'EUR'){
+                if(accountCurrency === fullData.ProfitCurrency){
+                    calculateItemsInTable(1, new Date());
+                } else {
+                    if(accountCurrency === 'EUR'){
+                        // валюта счет - eur
+                        if(fullData.ProfitCurrency === 'USD'){
                             fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/EURUSD')
                                 .then((response) => {
                                     return response.json();
                                 })
                                 .then((eurusdCurrency) =>{
-                                    calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price * eurusdCurrency[0].BestAsk.Price);
+                                    calculateItemsInTable(eurusdCurrency[0].BestAsk.Price, eurusdCurrency[0].Timestamp);
                                 })
                         } else {
-                            calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price);
+                            fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/' + renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol))
+                                .then((response) => {
+                                    return response.json();
+                                })
+                                .then((dataCurrentCurrency) => {
+                                    calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price, dataCurrentCurrency[0].Timestamp);
+                                });
                         }
+                    } else {
+                        //валюта счета - usd
+                        fetch('https://ttlivewebapi.free2ex.net:8443/api/v2/public/tick/' + renderSymbolForApi(accountCurrency, fullData.ProfitCurrency, fullData.MarginCurrency, currentSymbol))
+                            .then((response) => {
+                                return response.json();
+                            })
+                            .then((dataCurrentCurrency) => {
+                                calculateItemsInTable(dataCurrentCurrency[0].BestAsk.Price, dataCurrentCurrency[0].Timestamp);
+                            });
+                    }
+                }
 
-                    });
 
-                function calculateItemsInTable(price) {
+                function calculateItemsInTable(price, time) {
                     let valueAccountCurrency = price;
                     let pricePunktValue = getPricePunkt(currentTickValue, sizeContract, valueAccountCurrency);
 
@@ -595,7 +636,7 @@ function calculateTable() {
                     setVisibleItem(commentTitle);
                     setVisibleItem(commentData);
 
-                    commentData.innerHTML = `${fullData.Symbol} - ${valueAccountCurrency} ${parseMyData(data[0].Timestamp)}<br>
+                    commentData.innerHTML = `${fullData.ProfitCurrency + accountCurrency} - ${roundStringNumberWithoutTrailingZeroes(1 / valueAccountCurrency, 3)} ${parseMyData(time)}<br>
                         ${getSwopDate(fullData.TripleSwapDay)}`;
                 }
 

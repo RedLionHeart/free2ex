@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description"
+          content="Follow the market indicators in a convenient format. Economic news from all over the world in a convenient form on FREE2EX">
+    <title>Economic calendar | FREE2EX</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159330893-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159330893-4');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P46SB9T');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46SB9T"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="header">
+    <div class="header-top">
+        <div class="box box--default">
+            <div class="header-top__container">
+                <a href="https://my.free2ex.com/en/Login" target="_blank" rel="noopener noreferrer" class="header-top__enter-btn btn--white">Sign in</a>
+                <a href="https://my.free2ex.com/Registration" target="_blank" rel="noopener noreferrer" class="header-top__register-btn btn--light btn--header">Open account</a>
+                <div class="header-top__lang-switcher">
+                    <div class="header-top__cur-lang">EN</div>
+                    <div class="header-top__lang-arrow">
+                        <img src="./images/main/arrow-header.svg" alt="arrow" width="24" height="24">
+                    </div>
+                    <div class="lang-switcher-container">
+                        <div class="lang-switcher__current-item">
+                            <span>EN</span>
+                            <img src="./images/main/check-lang.svg" alt="Lang" width="24" height="24">
+                        </div>
+                        <a href="./index-en.html" class="lang-switcher__another-item">RU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="box box--default">
+            <div class="header-bottom__container">
+                <a href="./index-en.html" class="header-bottom__logo">
+                    <img src="./images/base/logo-new.png" alt="Free2ex" class="header-bottom__logo-img" width="72">
+                </a>
+                <nav class="header-bottom__menu">
+                    <div class="mobile-lang-switcher">
+                        <span>EN</span>
+                        <a href="./index-en.html" rel="noopener noreferrer">RU</a>
+                    </div>
+                    <ul>
+                        <li class="menu__item-with-subtitle">
+                            <a href="https://www.free2ex.com/" target="_blank" rel="noopener noreferrer">Markets</a>
+                            <div class="header-bottom__submenu">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.free2ex.com/shares" target="_blank" rel="noopener noreferrer" class="text">Stocks</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/forex" target="_blank" rel="noopener noreferrer" class="text">Forex pares</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/crypto" target="_blank" rel="noopener noreferrer" class="text">Indicies</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/indicies" target="_blank" rel="noopener noreferrer" class="text">Commodities</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/commodities" target="_blank" rel="noopener noreferrer" class="text">Cryptocurrencies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./calculator-en.html">Trading calculator</a>
+                        </li>
+                        <li>
+                            <a class="current" href="./calendar-en.html">Economic calendar</a>
+                        </li>
+                        <li class="menu__item-with-subtitle">
+                            <a href="https://www.free2ex.com/#about" target="_blank" rel="noopener noreferrer">About us</a>
+                            <div class="header-bottom__submenu">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.free2ex.com/about-us" target="_blank" rel="noopener noreferrer" class="text">About Free2ex</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.free2ex.com/platform" target="_blank" rel="noopener noreferrer" class="text">Trading platform</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.free2ex.com/#education" target="_blank" rel="noopener noreferrer">Knowledge base</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__close-button">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="main">
+    <section class="calendar">
+        <div class="box box--default">
+            <div class="mobile-menu">
+                <a href="./index-en.html" class="mobile-menu__logo">
+                    <img src="./images/base/logo-new-inverse.png" width="72" alt="Free2ex">
+                </a>
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h1 class="h2 calendar__title">ECONOMIC CALENDAR</h1>
+            <p class="calendar__subtext text">
+                The economic news calendar allows you to track events in economic life and predict changes in the exchange rate based on them. The calendar will be useful not only for traders who trade on the news, but also for those who prefer technical analysis. By tracking news that has a significant impact on the change in exchange rates, a trader using technical analysis will be able to take into account a significant increase in the volatility of the instrument in his strategy.
+            </p>
+            <div class="calendar__btn-container">
+                <a href="https://my.free2ex.com/ru/Registration" class="calendar__btn btn--light btn--default">Start trade</a>
+            </div>
+            <div class="calendar__container">
+                <div class="calendar__display">
+                    <iframe src="https://sslecal2.forexprostools.com?ecoDayBackground=%23489987&ecoDayFontColor=%23ffffff&columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone,filters&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=day&timeZone=18&lang=1" width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></div>
+                </div>
+                <div class="calendar__additional">
+                    <div class="calendar__use calendar-item">
+                        <h3 class="h4 calendar__item-title">The calendar contains the following data:</h3>
+                        <ol class="calendar__use-list">
+                            <li>1. News publication time;</li>
+                            <li>2. Currency of the country to which the news belongs;</li>
+                            <li>3. Importance - the degree to which the news affects the market;</li>
+                            <li>4. News text;</li>
+                            <li>5. Actual (current) value;/li>
+                            <li>6. Predicted value;</li>
+                            <li>7. Previous value.</li>
+                        </ol>
+                    </div>
+                    <!--<div class="calendar__symbol calendar-item">
+                        <h3 class="h4 calendar__item-title">Как интерпретировать данные и пользоваться ими:</h3>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Время:</p>
+                            <p class="calendar__symbol-item-text">время публикации новостей.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Страна:</p>
+                            <p class="calendar__symbol-item-text">показывает валюту страны. Будут показаны все пары, содержащие эту валюту.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Влияние:</p>
+                            <p class="calendar__symbol-item-text">указывает степень воздействия новости на рынок.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Событие:</p>
+                            <p class="calendar__symbol-item-text">название события.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Прогноз:</p>
+                            <p class="calendar__symbol-item-text">возможное будущее значение.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Текущее:</p>
+                            <p class="calendar__symbol-item-text">актуальное значение показателя.</p>
+                        </div>
+                        <div class="calendar__symbol-item">
+                            <p class="calendar__symbol-item-title">Предыдущее:</p>
+                            <p class="calendar__symbol-item-text"> прошлые данные.</p>
+                        </div>
+                    </div>-->
+                    <div class="calendar__data calendar-item">
+                        <h3 class="h4 calendar__item-title">How to interpret and use the data:</h3>
+                        <ol>
+                            <li>Pay attention to the currency of the country and the time of publication. Having this information, the trader can decide when to trade, and when it may not be worth opening a position on the instrument.</li>
+                            <li>Look at the level of importance of the news - the higher the level, the more significant the expected impact of the news on the market.</li>
+                            <li>Analyze the previous, predicted and actual value:
+                                <ul>
+                                    <li>The difference between the actual value and the predicted value means possible volatility for the selected currency</li>
+                                    <li>The greater the difference between the values, the greater the volatility</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p><strong>Note!</strong> The information presented in the economic calendar is general information. The published data should not be taken as recommendations for transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="box box--default">
+        <div class="footer__top">
+            <div class="footer__col footer__col--logo">
+                <img src="./images/base/logo-footer.svg" alt="logo" class="footer__logo">
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">Products</h3>
+                <ul>
+                    <li><a href="https://margin.free2ex.com/">Leverage trading</a></li>
+                    <li><a href="https://live.free2ex.com/bitcoin%20%2f%20usd?type=exchange">Spot trading</a></li>
+                    <li><a href="http://bestchange.free2ex.com/en">Quick exchange</a></li>
+                    <li><a href="https://business.free2ex.com">For Business</a></li>
+                    <li><a href="https://www.free2ex.com/referral">Referral program</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">API</h3>
+                <ul>
+                    <li><a href="https://live.free2ex.com/webapi?lang=en">WebREST API</a></li>
+                    <li><a href="https://live.free2ex.com/feedapi?lang=en">WebSocket Feed API</a></li>
+                    <li><a href="https://live.free2ex.com/tradeapi?lang=en">WebSocket Trade API</a></li>
+                    <li><a href="https://github.com/SoftFx/TTFixClient/tree/master/doc">FIX API</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">Trading terminal</h3>
+                <ul>
+                    <li><a href="https://live.free2ex.com/btcusd?type=exchange">Web</a></li>
+                    <li><a href="https://live.free2ex.com/Content/download/ticktrader/win/Free2ex-TickTraderTerminal-latest.exe">Windows</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=free2ex.ticktrader.terminal">Android</a></li>
+                    <li><a href="https://apps.apple.com/us/app/free2ex-ticktrader/id1502562625">iOS</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--default">
+                <h3 class="footer__col-title">About us</h3>
+                <ul>
+                    <li><a href="https://www.free2ex.com/markets">Markets</a></li>
+                    <li><a href="https://free2ex.zendesk.com/hc/en-gb/requests/new">Support</a></li>
+                    <li><a href="https://free2ex.zendesk.com/hc/en-gb/categories/360002470219-FAQ">FAQ</a></li>
+                    <li><a href="https://www.free2ex.com/fees/">Fees</a></li>
+                    <li><a href="https://hub.forklog.com/companies/free2ex/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--gray">
+                <ul>
+                    <li><a href="https://my.free2ex.com/Download?name=TOKEN%20TRADING%20PARTICIPATION%20AGREEMENT.pdf">Agreement</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=PRIVACY%20POLICY.pdf">Privacy policy</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=RISK%20DISCLOSURE%20INFORMATION.pdf">Risk notifications</a></li>
+                    <li><a href="https://my.free2ex.com/Download?name=GENERAL%20INFORMATION.pdf">General information</a></li>
+                    <li><a href="https://www.free2ex.com/documents-and-terms/">Documents and conditions</a></li>
+                    <li><a href="https://www.free2ex.com/jurisdictions">Jurisdiction which is limited to the provision of services</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <strong class="footer__bottom-title">Risk disclosure information</strong>
+            <ol class="footer__bottom-text">
+                <li>Activities related to transactions (operations) with tokens are associated with a high level of risk of complete loss of funds and other objects of civil rights (investments) transferred in exchange for tokens (including as a result of volatility in the cost of tokens; technical failures (errors); illegal actions, including theft).</li>
+                <li>Remember that tokens are not means of payment and are not secured by the state.</li>
+                <li>Legal regulation of transactions with tokens does not have a uniform approach and the consequences of such transactions may have different legal assessments in different states.</li>
+                <li>The technologies used (including the blockchain technology, other distributed information system and similar technologies) do not exclude the risks of technical failures and errors in operation.</li>
+            </ol>
+        </div>
+        <div class="footer__socials">
+            <a href="https://www.facebook.com/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/facebook.svg" alt="facebook">
+            </a>
+            <a href="https://www.instagram.com/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/inst.svg" alt="instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/38074176/admin/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/in.svg" alt="in">
+            </a>
+            <a href="https://twitter.com/Free2ex" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/twitter.svg" alt="twitter">
+            </a>
+            <a href="https://www.reddit.com/user/free2ex/" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/reddit.svg" alt="reddit">
+            </a>
+            <a href="https://t.me/free2ex" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/telegram.svg" alt="telegram">
+            </a>
+            <a href="https://vk.com/free2excom" target="_blank" rel="noopener noreferrer" class="footer__socials-item">
+                <img src="./images/base/footer/vk.svg" alt="vk">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/libs.min.js"></script>
+<script src="./js/masonry.pkgd.min.js"></script>
+<script src="./js/main.js"></script>
+
+<script>
+    let currentUTM = window.location.search
+    if(currentUTM.includes('?utm') || currentUTM.includes('?agent')){
+        let hrefs = document.getElementsByTagName('a')
+        for(let i = 0; i < hrefs.length; i++){
+            console.log(currentUTM)
+            hrefs[i].href += currentUTM
+        }
+    }
+</script>
+<!-- Start of free2ex Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=ac8ab16c-4fc1-4d7f-a0ac-8549930b5ab4"> </script>
+<script type="text/javascript">
+    zE('webWidget', 'setLocale', 'en-gb');
+</script>
+<!-- End of free2ex Zendesk Widget script -->
+
+</body>
+</html>
