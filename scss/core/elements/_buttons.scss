@@ -1,0 +1,53 @@
+.btn--light{
+  background-color: $color_light_blue;
+  border-radius: 5px;
+  color: $color_white;
+  transition: all .3s ease-in-out;
+  border: 2px solid $color_light_blue;
+  &:not(.header-top__register-btn):hover{
+    background-color: $color_white;
+    color: #023837;
+  }
+}
+.btn--default{
+  padding: 14px 22px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  @media screen and (max-width: 1199px){
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+}
+.btn--default-min{
+  padding: 14px 36px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  @media screen and (max-width: 1199px){
+    font-size: 16px;
+    padding: 10px 36px;
+  }
+}
+.btn--calculator{
+  padding: 4px 22px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.btn--header{
+  padding: 6px 36px;
+}
+.btn--white{
+  padding: 6px 30px;
+  border: 2px solid $color_light_blue;
+  border-radius: 5px;
+  background-color: $color_white;
+  color: #023837;
+  transition: all .3s ease-in-out;
+  &:not(.header-top__enter-btn):hover{
+    background-color: $color_light_blue;
+    color: $color_white;
+  }
+}

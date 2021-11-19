@@ -1,0 +1,92 @@
+.trade{
+  padding: clamp(80px,25vmin, 193px) 0 119px;
+  @media screen and (max-width: 1199px){
+    padding: 100px 0 60px;
+  }
+}
+.trade__container{
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 768px){
+    flex-direction: column-reverse;
+  }
+}
+.trade__content{
+  margin-right: 71px;
+  @media screen and (max-width: 1199px){
+    margin-right: 0;
+    margin-left: 30px;
+  }
+  @media screen and (max-width: 768px){
+    margin-left: 0;
+  }
+  .trade__btn{
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+}
+.trade__btn-mobile{
+  display: none;
+  @media screen and (max-width: 768px){
+    display: block;
+    text-align: center;
+  }
+}
+.trade__logos{
+  img{
+    display: block;
+    @media screen and (max-width: 1199px){
+      max-width: 400px;
+    }
+    @media screen and (max-width: 991px){
+      max-width: 320px;
+    }
+    @media screen and (max-width: 768px){
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+  @media screen and (max-width: 576px){
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+.trade__logos-container{
+  @media screen and (max-width: 768px){
+    margin-top: 20px;
+  }
+}
+.trade__logos-text{
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 20px;
+  color: $color_text_gray_2;
+  @media screen and (max-width: 768px){
+    margin-top: 0;
+  }
+  @media screen and (max-width: 576px){
+    line-height: 16px;
+  }
+}
+.trade__title{
+  max-width: 378px;
+  @media screen and (max-width: 768px){
+    //margin: 0 auto;
+    max-width: 100%;
+  }
+}
+.trade__text{
+  margin-top: 20px;
+  max-width: 409px;
+  @media screen and (max-width: 768px){
+    max-width: 100%;
+    margin-top: 24px;
+  }
+}
+.trade__btn{
+  margin-top: 32px;
+  @media screen and (max-width: 768px){
+    margin-top: 48px;
+  }
+}

@@ -18,8 +18,9 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-    <title>Free2ex</title>
+    <meta name="description"
+          content="Торгуйте токенизированными активами на акции, нефть, токены и другие активы. Приумножайте доходы на финансовых рынках с кредитным плечом до 1:500">
+    <title>Торговля с левереджем токенизированными активами | FREE2EX</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159330893-4"></script>
     <script>
@@ -61,7 +62,7 @@
                             <span>RU</span>
                             <img src="./images/main/check-lang.svg" alt="Lang" width="24" height="24">
                         </div>
-                        <a href="#" class="lang-switcher__another-item">EN</a>
+                        <a href="https://margin.free2ex.com/index-en.html" class="lang-switcher__another-item">EN</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +77,7 @@
                 <nav class="header-bottom__menu">
                     <div class="mobile-lang-switcher">
                         <span>RU</span>
-                        <a href="#" target="_blank" rel="noopener noreferrer">EN</a>
+                        <a href="https://margin.free2ex.com/index-en.html" rel="noopener noreferrer">EN</a>
                     </div>
                     <ul>
                         <li class="menu__item-with-subtitle">
@@ -90,7 +91,7 @@
                                         <a href="https://www.free2ex.com/ru/forex" target="_blank" rel="noopener noreferrer" class="text">Токенизированные форекс пары</a>
                                     </li>
                                     <li>
-                                        <a href="https://www.free2ex.com/ru/markets" target="_blank" rel="noopener noreferrer" class="text">Криптовалюты</a>
+                                        <a href="https://www.free2ex.com/ru/crypto" target="_blank" rel="noopener noreferrer" class="text">Токены</a>
                                     </li>
                                     <li>
                                         <a href="https://www.free2ex.com/ru/indicies" target="_blank" rel="noopener noreferrer" class="text">Токенизированные индексы</a>
@@ -170,14 +171,16 @@
                 <p class="offer__subtitle">Инвестировать на мировых финансовых рынках теперь просто как никогда!</p>
                 <a href="https://my.free2ex.com/ru/Registration" target="_blank" rel="noopener noreferrer" class="offer__btn btn--light btn--default">Зарегистрироваться</a>
             </div>
-            <img src="./images/main/offer-mockup.png" alt="Free2ex" class="offer__img">
+            <div class="offer__img-container">
+                <img src="./images/main/offer-mockup.png" alt="Free2ex" class="offer__img">
+            </div>
         </div>
     </section>
     <section class="trade">
         <div class="box box--default">
             <div class="trade__container">
                 <div class="trade__btn-mobile">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn--light trade__btn btn--default">Начать инвестировать</a>
+                    <a href="https://my.free2ex.com/ru/Registration" target="_blank" rel="noopener noreferrer" class="btn--light trade__btn btn--default">Начать инвестировать</a>
                 </div>
                 <div class="trade__logos-container">
                     <div class="trade__logos">
@@ -190,8 +193,10 @@
                 </div>
                 <div class="trade__content">
                     <h2 class="trade__title h2">Торгуйте с депозитом от 100$</h2>
-                    <p class="trade__text text">Зарегистрируйтесь, чтобы получить неограниченный доступ к маржинальной торговле токенизированными акциями международных компаний, криптовалютами, индексам и другими финансовыми активами.</p>
-                    <a href="#" class="btn--light trade__btn btn--default">Начать инвестировать</a>
+                    <p class="trade__text text">
+                        <img src="./images/main/deposit-text.png" alt="торговля с депозитом">
+                    </p>
+                    <a href="https://my.free2ex.com/ru/Registration" class="btn--light trade__btn btn--default">Начать инвестировать</a>
                 </div>
             </div>
         </div>
@@ -225,7 +230,7 @@
     <section class="terminal">
         <div class="box box--default">
             <div class="terminal__nav">
-                <h3 class="terminal__title h3">Торговля</h3>
+                <h3 class="terminal__title h3">Терминалы</h3>
                 <div class="terminal__menu">
                     <a href="#mobile" data-number-slide="1" class="terminal__menu-item terminal__menu-item--active h4"><span>Android / iOS</span>
                         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -264,8 +269,7 @@
             <div class="terminal__swiper-wrapper">
                 <div id="mobile" class="terminal--mobile box box--without-pr terminal__box terminal__box--active">
                     <div class="terminal__content">
-                        <h2 class="terminal__title h2">Торговый терминал
-                            в вашем смартфоне</h2>
+                        <h2 class="terminal__title h2">iOS/Android</h2>
                         <p class="terminal__content-text text">Простой и удобный круглосуточной доступ к мобильной торговле из любой точки мира:</p>
                         <ul class="terminal__list">
                             <li class="text">полная поддержка маржинальной и спот торговли; </li>
@@ -284,12 +288,15 @@
                         </div>
                     </div>
                     <div class="terminal__img-container">
-                        <img src="./images/main/mobiles.png" alt="Торговый терминал" class="terminal__img">
+                        <picture>
+                            <source media="(max-width: 991px)" srcset="./images/main/mobiles-mobile.png">
+                            <img src="./images/main/mobiles.png" alt="Торговый терминал" class="terminal__img">
+                        </picture>
                     </div>
                 </div>
                 <div id="pc" class="terminal--pc box box--without-pr terminal__box">
                     <div class="terminal__content">
-                        <h2 class="terminal__title h2">Идеальное решение для опытных трейдеров.</h2>
+                        <h2 class="terminal__title h2">Windows-терминал</h2>
                         <p class="terminal__content-text text">Самый продвинутый терминал с точки зрения возможностей торговли:</p>
                         <ul class="terminal__list">
                             <li class="text">расширенная линейка ордеров, включая ордера IOC и Iceberg;</li>
@@ -308,8 +315,7 @@
                 </div>
                 <div id="web" class="terminal--web box box--without-pr terminal__box">
                     <div class="terminal__content">
-                        <h2 class="terminal__title h2">Торгуйте где угодно
-                            и когда угодно</h2>
+                        <h2 class="terminal__title h2">Web-терминал</h2>
                         <p class="terminal__content-text text">Торгуйте где угодно и когда угодно, без необходимости загружать программное обеспечение. Независимо от того, используете ли вы Mac или PC, вы можете легко и быстро заходить на рынки через ваш браузер.
                         </p>
                         <div class="terminal__button-container">
@@ -328,49 +334,10 @@
         <div class="box box--default">
             <h2 class="popular__title h2">Самые популярные инструменты для торговли и инвестиций доступны с одного счета!</h2>
             <div class="popular__items">
-                <div class="popular__item">
-                    <img src="./images/main/popular/1.svg" alt="Forex" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">Форекс</h3>
-                        <p class="popular__item-text text">EUR/USD, USD/CHF, USD/JPY и т.д.</p>
-                    </div>
-                </div>
-                <div class="popular__item">
-                    <img src="./images/main/popular/2.svg" alt="Indexes" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">Индексы</h3>
-                        <p class="popular__item-text text">S&P 500, NASDAQ, DOW 30 и т.д.</p>
-                    </div>
-                </div>
-                <div class="popular__item">
-                    <img src="./images/main/popular/3.svg" alt="Promotions" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">Акции</h3>
-                        <p class="popular__item-text text">Apple, Microsoft, Google и т.д.</p>
-                    </div>
-                </div>
-                <div class="popular__item">
-                    <img src="./images/main/popular/4.svg" alt="Raw" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">Сырьевые товары</h3>
-                        <p class="popular__item-text text">Brent, WTI, Gold
-                            и т.д.</p>
-                    </div>
-                </div>
-                <div class="popular__item">
-                    <img src="./images/main/popular/5.svg" alt="Raw" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">Криптовалюты</h3>
-                        <p class="popular__item-text text">BTC, ETH, XRP и т.д</p>
-                    </div>
-                </div>
-                <div class="popular__item">
-                    <img src="./images/main/popular/6.svg" alt="ETF" class="popular__item-img">
-                    <div class="popular__item-content">
-                        <h3 class="popular__item-title h3">ETF</h3>
-                        <p class="popular__item-text text">SPY, QQQ, XLF и т.д.</p>
-                    </div>
-                </div>
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./images/main/popular-mobile.png">
+                    <img src="./images/main/popular.png" alt="Самые популярные инструменты">
+                </picture>
             </div>
         </div>
     </section>
@@ -382,8 +349,12 @@
                     <div class="why__item-counter">1</div>
                     <div class="why__item-content">
                         <h3 class="why__item-title h3">Надежность</h3>
-                        <p class="why__item-text text">Деятельность криптобиржи регулируется Парком высоких технологий. Высокие стандарты AML/KYC.
-                            Подробнее о выгодах <a href="#">здесь</a></p>
+                        <p class="why__item-text text">
+                            <picture>
+                                <source media="(max-width: 576px)" srcset="./images/main/why-image-mobile.png">
+                                <img src="./images/main/why-image.png" alt="Надежность">
+                            </picture>
+                        </p>
                     </div>
                 </div>
                 <div class="why__item">
@@ -564,7 +535,7 @@
                 <h2 class="contact__title h2">Свяжитесь с нами</h2>
                 <p class="contact__text text">Остались вопросы? Свяжитесь с нами!</p>
                 <div class="contact__btn-container">
-                    <a href="#" rel="noopener noreferrer" target="_blank" class="contact__btn btn--light btn--default">Контакты</a>
+                    <a href="https://free2ex.zendesk.com/hc/ru/requests/new" rel="noopener noreferrer" target="_blank" class="contact__btn btn--light btn--default">Контакты</a>
                 </div>
             </div>
             <img src="./images/main/welcome.png" alt="Welcome" class="contact__img">
@@ -683,9 +654,9 @@
 </script>
 <!-- Start of free2ex Zendesk Widget script -->
 <script async id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=ac8ab16c-4fc1-4d7f-a0ac-8549930b5ab4"> </script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     zE('webWidget', 'setLocale', 'ru');
-</script>
+</script>-->
 <!-- End of free2ex Zendesk Widget script -->
 
 

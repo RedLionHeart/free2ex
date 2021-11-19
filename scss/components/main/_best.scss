@@ -1,0 +1,196 @@
+.best{
+  padding: 160px 0;
+  @media screen and (max-width: 1199px){
+    padding: 100px 0;
+  }
+}
+.best__title{
+
+}
+.best__container{
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  @media screen and (max-width: 1199px){
+    gap: 20px;
+  }
+  @media screen and (max-width: 991px){
+    grid-template-columns: 500px;
+  }
+  @media screen and (max-width: 768px){
+      margin-top: 12px;
+  }
+  @media screen and (max-width: 576px){
+    grid-template-columns: 1fr;
+  }
+}
+.best__left-title{
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+  }
+}
+.best__list{
+  margin-top: 24px;
+  li+li{
+    margin-top: 12px;
+  }
+  li{
+    position: relative;
+    padding-left: 32px;
+    &::before{
+      content:"";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../images/main/check.svg") no-repeat center/contain;
+    }
+  }
+}
+.best__btn-container{
+  margin-top: 40px;
+  @media screen and (max-width: 576px){
+    text-align: center;
+  }
+}
+.best__right-content{
+
+}
+.best__table{
+  @media screen and (max-width: 576px){
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+.best__table-row{
+  display: grid;
+  grid-template-columns: 33% 24% 24% 19%;
+  @media screen and (max-width: 1199px){
+    grid-template-columns: 31% 24% 24% 21%;
+  }
+  @media screen and (max-width: 576px){
+    grid-template-columns: 30% 23% 23% 24%;
+  }
+  &:nth-child(odd):not(.best__table-head){
+    background-color: $color_table_row_odd;
+  }
+  &:nth-child(even):not(.best__table-head){
+    background-color: $color_table_row_even;
+  }
+}
+.best__table-col{
+  display: flex;
+  position: relative;
+  padding: 12px 0;
+  text-align: left;
+  @media screen and (max-width: 576px){
+    font-size: 12px;
+  }
+  &:first-child{
+    padding-left: 54px;
+    @media screen and (max-width: 1199px){
+      padding-left: 44px;
+    }
+    @media screen and (max-width: 576px){
+      padding-left: 32px;
+    }
+  }
+  &--arrow-up{
+    &::before{
+      content:"";
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background: url("../images/main/arrow-up.svg") no-repeat center/contain;
+      @media screen and (max-width: 1199px){
+        left: 20px;
+      }
+      @media screen and (max-width: 576px){
+        width: 16px;
+        height: 16px;
+        left: 16px;
+      }
+    }
+  }
+  &--arrow-down{
+    &::before{
+      content:"";
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background: url("../images/main/arrow-down.svg") no-repeat center/contain;
+      @media screen and (max-width: 1199px){
+        left: 20px;
+      }
+      @media screen and (max-width: 576px){
+        width: 16px;
+        height: 16px;
+        left: 16px;
+      }
+    }
+  }
+  &--value-up{
+    padding: 8px 0;
+    span{
+      padding: 4px 12px;
+      border-radius: 5px;
+      background-color: $color_up;
+    }
+  }
+  &--value-down{
+    padding: 8px 0;
+    span{
+      padding: 4px 12px;
+      border-radius: 5px;
+      background-color: $color_down;
+    }
+  }
+}
+.best__table-head{
+  background-color: $color_table_head;
+  color: $color_text_table_head;
+  @media screen and (max-width: 576px){
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .best__table-col:first-child{
+    padding-left: 30px;
+    @media screen and (max-width: 1199px){
+      padding-left: 20px;
+    }
+    @media screen and (max-width: 576px){
+      padding-left: 16px;
+    }
+  }
+}
+.best__table-footer{
+  grid-template-columns: 1fr;
+  color: $color_text_table_head;
+  padding: 4px 32px;
+  @media screen and (max-width: 576px){
+    font-size: 12px;
+    line-height: 16px;
+    padding: 8px 16px;
+  }
+}
+.best__btn-container--mobile{
+  display: none;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
+}
+.best__btn-container--desktop{
+  display: block;
+  @media screen and (max-width: 991px){
+    display: none;
+  }
+}

@@ -1,0 +1,123 @@
+.footer{
+  background-color: $color_footer;
+  padding: 40px 0;
+}
+.footer__top{
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 72px minmax(120px, 174px) minmax(120px, 174px) minmax(120px, 174px) minmax(120px, 174px) auto;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid $color_text;
+  @media screen and (max-width: 1199px){
+   grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 576px){
+    position: relative;
+    border-bottom: none;
+  }
+  &::before{
+    @media screen and (max-width: 576px){
+      content: "";
+      position: absolute;
+      width: calc(100% + 32px);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      height: 1px;
+      background-color: $color_text;
+    }
+  }
+}
+.footer__col{
+  ul{
+    li{
+      line-height: 20px;
+      @media screen and (max-width: 768px){
+        font-size: 14px;
+        line-height: 24px;
+      }
+      &:not(:last-child){
+        margin-bottom: 4px;
+        @media screen and (max-width: 768px){
+          margin-bottom: 0;
+        }
+      }
+      a{
+        color: $color_text;
+      }
+    }
+  }
+}
+.footer__col-title{
+  margin-bottom: 4px;
+  font-size: 16px;
+  @media screen and (max-width: 768px){
+    font-size: 14px;
+  }
+}
+.footer__col--logo{
+  //flex: 0 0 72px;
+  @media screen and (max-width: 1199px){
+    display: none;
+  }
+}
+.footer__col--default{
+  //flex: 0 0 174px;
+}
+.footer__col--gray{
+  color: $color_gray_footer;
+  @media screen and (max-width: 1199px){
+    grid-column: 1/-1;
+  }
+  ul{
+    li{
+      a{
+        color: $color_gray_footer;
+      }
+    }
+  }
+}
+
+.footer__bottom{
+  padding: 20px 0;
+}
+.footer__bottom-title{
+  font-size: 14px;
+  line-height: 24px;
+}
+.footer__bottom-text{
+  list-style-type: decimal;
+  padding-left: 13px;
+  margin: 2px 0 0;
+  li{
+    list-style: decimal;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+.footer__socials{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  @media screen and (max-width: 768px){
+    justify-content: center;
+    gap: 8px;
+  }
+}
+.footer__socials-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  background-color: $color_text;
+  margin: 1px;
+  transition: all .3s ease-in-out;
+  &:hover{
+    opacity: .8;
+  }
+}
